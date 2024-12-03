@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <HistoryRouter history={browserHistory} basename='/six-cities'>
+      <HistoryRouter history={browserHistory} basename={import.meta.env.BASE_URL}>
         <App authorizationStatus= {authorizationStatus}/>
       </HistoryRouter>
     </Provider>
