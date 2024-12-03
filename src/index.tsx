@@ -4,6 +4,8 @@ import App from './app/app/app';
 import { AuthorizationStatus } from './app/router/router/router';
 import { Provider } from 'react-redux';
 import {store} from './store';
+import HistoryRouter from './componets/history-router/history-router';
+import browserHistory from './browser-history';
 
 
 const authorizationStatus = AuthorizationStatus.Auth;
@@ -15,7 +17,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App authorizationStatus= {authorizationStatus}/>
+      <HistoryRouter history={browserHistory} basename='/six-cities'>
+        <App authorizationStatus= {authorizationStatus}/>
+      </HistoryRouter>
     </Provider>
   </React.StrictMode>
 );
